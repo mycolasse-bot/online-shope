@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aurelia Mode - Fashion Wanita</title>
+    <meta
+      name="description"
+      content="Toko online fashion wanita bergaya marketplace dengan produk, cart, checkout, ekspedisi, pembayaran, dan admin produk."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="market-header">
+      <div class="market-top">
+        <button class="plain-top-button" id="adminOpen" type="button">Seller Center</button>
+        <span>Ikuti kami</span>
+        <div class="theme-switcher" aria-label="Opsi warna">
+          <span>Warna</span>
+          <button class="theme-dot rose" type="button" data-theme-choice="rose" aria-label="Tema rose"></button>
+          <button class="theme-dot lavender" type="button" data-theme-choice="lavender" aria-label="Tema lavender"></button>
+          <button class="theme-dot shopee-yellow" type="button" data-theme-choice="shopee-yellow" aria-label="Tema kuning Shopee"></button>
+          <button class="theme-dot orange" type="button" data-theme-choice="orange" aria-label="Tema orange"></button>
+          <button class="theme-dot blue" type="button" data-theme-choice="blue" aria-label="Tema biru"></button>
+          <button class="theme-dot sage" type="button" data-theme-choice="sage" aria-label="Tema sage"></button>
+          <button class="theme-dot green" type="button" data-theme-choice="green" aria-label="Tema hijau"></button>
+          <button class="theme-dot mocha" type="button" data-theme-choice="mocha" aria-label="Tema mocha"></button>
+          <button class="theme-dot gray" type="button" data-theme-choice="gray" aria-label="Tema abu"></button>
+          <button class="theme-dot white" type="button" data-theme-choice="white" aria-label="Tema putih"></button>
+        </div>
+      </div>
+
+      <div class="market-main">
+        <a class="market-brand" href="index.html" aria-label="Aurelia Mode">
+          <span class="bag-mark">A</span>
+          <span>Aurelia Mode</span>
+        </a>
+
+        <form class="search-box" id="searchForm">
+          <input id="searchInput" type="search" placeholder="Cari dress satin, blouse, tas, sepatu..." />
+          <button class="search-submit" type="submit" aria-label="Cari">
+            <span class="search-icon" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <button class="cart-link" id="cartOpen" type="button">
+          Cart <span id="cartCount">0</span>
+        </button>
+      </div>
+
+      <nav class="quick-links" aria-label="Pencarian cepat">
+        <button type="button" data-search="dress">Dress Wanita</button>
+        <button type="button" data-search="blouse">Blouse Puff</button>
+        <button type="button" data-search="tas">Tas Wanita</button>
+        <button type="button" data-search="heels">Sepatu Wanita</button>
+        <button type="button" data-search="flash sale">Flash Sale</button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="promo-layout">
+        <a class="main-promo" href="#produk">
+          <div class="promo-copy">
+            <p>Koleksi Fashion Wanita</p>
+            <h1>Aurelia Mode</h1>
+            <span>Dress, blouse, outer, tas, rok, dan heels pilihan dengan promo harian.</span>
+            <strong>Diskon sampai 30%</strong>
+          </div>
+          <div class="promo-products" aria-hidden="true">
+            <img class="promo-product main" src="assets/photos/dress-1.jpg" alt="" />
+            <img class="promo-product small top" src="assets/photos/bag-1.jpg" alt="" />
+            <img class="promo-product small bottom" src="assets/photos/heels-1.jpg" alt="" />
+          </div>
+        </a>
+        <div class="side-promos">
+          <a href="#flashsale">
+            <span>
+              <strong>Flash Sale</strong>
+              <small>Harga spesial hari ini</small>
+            </span>
+            <img src="assets/photos/blouse-1.jpg" alt="Mira Puff Sleeve Blouse" />
+          </a>
+          <a href="#produk">
+            <span>
+              <strong>Gratis Voucher</strong>
+              <small>Pilih ekspedisi favorit</small>
+            </span>
+            <img src="assets/photos/skirt-1.jpg" alt="Ayla Pleated Midi Skirt" />
+          </a>
+        </div>
+      </section>
+
+      <section class="shortcut-row" aria-label="Menu promo">
+        <a href="#produk">Aurelia Mall</a>
+        <a href="#flashsale">Flash Sale</a>
+        <a href="#produk">Voucher Ongkir</a>
+        <a href="#produk">Semua Promo</a>
+      </section>
+
+      <section class="panel-section" aria-labelledby="categoryTitle">
+        <div class="section-title-row">
+          <h2 id="categoryTitle">Kategori</h2>
+        </div>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+
+      <section class="panel-section" id="flashsale" aria-labelledby="flashTitle">
+        <div class="section-title-row">
+          <h2 id="flashTitle">Flash Sale</h2>
+          <span id="flashClock">00:00:00</span>
+        </div>
+        <div class="flash-strip" id="flashStrip"></div>
+      </section>
+
+      <section class="panel-section" id="produk" aria-labelledby="productTitle">
+        <div class="section-title-row products-head">
+          <h2 id="productTitle">Rekomendasi Fashion Wanita</h2>
+          <div class="category-filter" id="categoryFilters"></div>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+    </main>
+
+    <aside class="drawer" id="cartDrawer" aria-hidden="true">
+      <div class="drawer-panel">
+        <div class="drawer-head">
+          <h2>Keranjang</h2>
+          <button class="close-button" id="cartClose" type="button" aria-label="Tutup keranjang">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary">
+          <span>Total Produk</span>
+          <strong id="cartSubtotal">Rp0</strong>
+        </div>
+        <a class="primary-button full" href="product.html?id=dress" id="checkoutJump">Checkout di Halaman Produk</a>
+      </div>
+    </aside>
+
+    <aside class="drawer" id="adminDrawer" aria-hidden="true">
+      <div class="drawer-panel admin-panel">
+        <div class="drawer-head">
+          <h2>Admin Toko</h2>
+          <button class="close-button" id="adminClose" type="button" aria-label="Tutup admin">&times;</button>
+        </div>
+
+        <form class="login-box" id="loginForm">
+          <p>Login admin demo</p>
+          <label>
+            Username
+            <input name="username" value="admin" required />
+          </label>
+          <label>
+            Password
+            <input name="password" type="password" value="admin123" required />
+          </label>
+          <button class="primary-button" type="submit">Login</button>
+          <small>Username: admin, Password: admin123</small>
+        </form>
+
+        <div class="admin-content" id="adminContent" hidden>
+          <div class="admin-toolbar">
+            <h3>Kelola Produk</h3>
+            <button class="secondary-button" id="logoutAdmin" type="button">Logout</button>
+          </div>
+
+          <form class="product-form" id="productForm">
+            <input type="hidden" name="id" />
+            <label>
+              Judul Produk
+              <input name="title" required placeholder="Nama produk" />
+            </label>
+            <label>
+              Kategori Produk
+              <input name="category" required placeholder="Dress, Blouse, Outer" />
+            </label>
+            <div class="form-row">
+              <label>
+                Harga
+                <input name="price" required type="number" min="0" step="1000" />
+              </label>
+              <label>
+                Diskon %
+                <input name="discount" type="number" min="0" max="90" step="1" value="0" />
+              </label>
+            </div>
+            <label>
+              Deskripsi
+              <textarea name="description" required placeholder="Deskripsi produk"></textarea>
+            </label>
+            <button class="primary-button" type="submit" id="productSubmit">Tambah Produk</button>
+          </form>
+
+          <div class="admin-list" id="adminProductList"></div>
+
+          <div class="orders-box">
+            <div class="admin-toolbar">
+              <h3>Notif Pembeli</h3>
+              <button class="secondary-button" id="clearOrders" type="button">Bersihkan</button>
+            </div>
+            <div id="orderList" class="order-list"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="store-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

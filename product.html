@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detail Produk - Aurelia Mode</title>
+    <meta
+      name="description"
+      content="Detail produk fashion wanita dengan galeri foto, cart, checkout, ekspedisi, dan pembayaran."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="market-header">
+      <div class="market-top">
+        <a href="index.html">Aurelia Mode</a>
+        <span>Detail Produk</span>
+        <span>Pembayaran lengkap</span>
+        <div class="theme-switcher" aria-label="Opsi warna">
+          <span>Warna</span>
+          <button class="theme-dot rose" type="button" data-theme-choice="rose" aria-label="Tema rose"></button>
+          <button class="theme-dot lavender" type="button" data-theme-choice="lavender" aria-label="Tema lavender"></button>
+          <button class="theme-dot shopee-yellow" type="button" data-theme-choice="shopee-yellow" aria-label="Tema kuning Shopee"></button>
+          <button class="theme-dot orange" type="button" data-theme-choice="orange" aria-label="Tema orange"></button>
+          <button class="theme-dot blue" type="button" data-theme-choice="blue" aria-label="Tema biru"></button>
+          <button class="theme-dot sage" type="button" data-theme-choice="sage" aria-label="Tema sage"></button>
+          <button class="theme-dot green" type="button" data-theme-choice="green" aria-label="Tema hijau"></button>
+          <button class="theme-dot mocha" type="button" data-theme-choice="mocha" aria-label="Tema mocha"></button>
+          <button class="theme-dot gray" type="button" data-theme-choice="gray" aria-label="Tema abu"></button>
+          <button class="theme-dot white" type="button" data-theme-choice="white" aria-label="Tema putih"></button>
+        </div>
+      </div>
+
+      <div class="market-main">
+        <a class="market-brand" href="index.html" aria-label="Aurelia Mode">
+          <span class="bag-mark">A</span>
+          <span>Aurelia Mode</span>
+        </a>
+
+        <form class="search-box" id="detailSearchForm">
+          <input id="detailSearchInput" type="search" placeholder="Cari produk lain di toko..." />
+          <button class="search-submit" type="submit" aria-label="Cari">
+            <span class="search-icon" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <button class="cart-link" id="cartOpen" type="button">
+          Cart <span id="cartCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-shell detail-page">
+      <section class="detail-panel" id="productDetail"></section>
+
+      <section class="product-checkout" id="checkout">
+        <h2>Checkout Produk Ini</h2>
+        <form id="buyForm">
+          <label>
+            Nama Lengkap
+            <input required name="name" placeholder="Contoh: Sinta Maharani" />
+          </label>
+          <label>
+            Nomor WhatsApp
+            <input required name="phone" placeholder="08xxxxxxxxxx" />
+          </label>
+          <label>
+            Nama Jalan
+            <input required name="street" placeholder="Contoh: Jl. Melati No. 21" />
+          </label>
+          <div class="form-row">
+            <label>
+              Kelurahan
+              <input required name="village" placeholder="Contoh: Sukamaju" />
+            </label>
+            <label>
+              Kabupaten
+              <input required name="regency" placeholder="Contoh: Sleman" />
+            </label>
+          </div>
+          <label>
+            Provinsi
+            <input required name="province" placeholder="Contoh: DI Yogyakarta" />
+          </label>
+          <div class="form-row">
+            <label>
+              Pilih Ekspedisi
+              <select name="shipping" id="shippingSelect" required></select>
+            </label>
+            <label>
+              Metode Pembayaran
+              <select name="payment" id="paymentSelect" required></select>
+            </label>
+          </div>
+          <button class="primary-button" type="submit">Buat Pesanan dan Bayar</button>
+          <div class="payment-result" id="paymentResult" hidden></div>
+        </form>
+      </section>
+    </main>
+
+    <aside class="drawer" id="cartDrawer" aria-hidden="true">
+      <div class="drawer-panel">
+        <div class="drawer-head">
+          <h2>Keranjang</h2>
+          <button class="close-button" id="cartClose" type="button" aria-label="Tutup keranjang">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary">
+          <span>Total Produk</span>
+          <strong id="cartSubtotal">Rp0</strong>
+        </div>
+        <a class="primary-button full" href="#checkout" id="checkoutJump">Checkout Produk Ini</a>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="store-data.js"></script>
+    <script src="product-page.js"></script>
+  </body>
+</html>
